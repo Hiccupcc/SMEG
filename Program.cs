@@ -1,8 +1,10 @@
 ﻿int TaskFinish = 0;
+Console.Write("Enter a value: ");
+int UserInput = Convert.ToInt32(Console.ReadLine());
 while (TaskFinish == 0)
 { 
 int Ans = 0; 
-int Value = 100;
+int Value = UserInput;
 var (x, y, z) = GenRandomNumber();  
 var (signI, signS) = GenRandomSign(); 
  for (int i = 0; i < 2; i++)
@@ -19,24 +21,21 @@ var (signI, signS) = GenRandomSign();
     {
         int randnum; 
         Random rnd = new Random();
-        randnum = rnd.Next(1, 100);
+        randnum = rnd.Next(0, 100);
         Ans = x + y + z + randnum;
         Console.WriteLine(Ans); 
     }
   }
-  
   if (Ans == Value)
   {
     TaskFinish++;
     Console.ForegroundColor = ConsoleColor.Red; 
-    Console.WriteLine("The number 100 appeared.");
+    Console.WriteLine("The number " + Value +" appeared");
     Console.ReadKey(); 
     break;
     
   }
-
 }
- 
 static (int, string) GenRandomSign()
 {
    string signS = "";
