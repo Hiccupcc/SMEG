@@ -1,0 +1,3 @@
+1- we're gonna do multiple math equations
+2- for every time we encounter a specifc number 
+3- after 5 equations, we're going to display the number
