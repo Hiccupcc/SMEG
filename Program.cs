@@ -1,4 +1,9 @@
 ﻿int TaskFinish = 0;
+Console.WindowWidth = 35; 
+Console.WriteLine("Please don't click the console");
+Console.WriteLine("To continue, press any button");
+Console.ReadKey(); 
+Console.Clear(); 
 Console.Write("Enter a value: ");
 int UserInput = Convert.ToInt32(Console.ReadLine());
 while (TaskFinish == 0)
@@ -11,19 +16,35 @@ var (signI, signS) = GenRandomSign();
  {
    if (signS == "+")
    { 
-        int randnum; 
         Random rnd = new Random();
-        randnum = rnd.Next(1,100);
-        Ans = x + y + z + randnum; 
-        Console.WriteLine(Ans);
+        if(UserInput <= 10)
+				{
+				  int randnum = rnd.Next(0,10);
+				  Ans = x + y + z + randnum; 
+					Console.WriteLine(Ans);
+				}
+				if (UserInput >= 10)
+				{ 
+					int randnum = rnd.Next(0,1000);
+				  Ans = x + y + z + randnum; 
+					Console.WriteLine(Ans);
+				}
    }
    else if (signS == "-")
     {
-        int randnum; 
-        Random rnd = new Random();
-        randnum = rnd.Next(0, 100);
-        Ans = x + y + z + randnum;
-        Console.WriteLine(Ans); 
+			  Random rnd = new Random(); 
+        if (UserInput >= 10)
+				{
+				 int randnum = rnd.Next(0,1000);
+				  Ans = x + y + z + randnum; 
+					Console.WriteLine(Ans);
+				}
+				else if (UserInput <= 10)
+				{
+					int randnum = rnd.Next(0,1000);
+				  Ans = x + y + z + randnum; 
+					Console.WriteLine(Ans);
+				}
     }
   }
   if (Ans == Value)
