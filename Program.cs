@@ -1,27 +1,43 @@
-﻿int Ans; 
+﻿int TaskFinish = 0;
+while (TaskFinish == 0)
+{ 
+int Ans = 0; 
+int Value = 100;
 var (x, y, z) = GenRandomNumber();  
-var (signI, signS) = GetRandomSign(); 
-for (int i = 0; i < 5; i++)
-{
+var (signI, signS) = GenRandomSign(); 
+ for (int i = 0; i < 2; i++)
+ {
    if (signS == "+")
    { 
         int randnum; 
         Random rnd = new Random();
         randnum = rnd.Next(1,100);
         Ans = x + y + z + randnum; 
-        Console.WriteLine(Ans);    
+        Console.WriteLine(Ans);
    }
    else if (signS == "-")
     {
         int randnum; 
         Random rnd = new Random();
         randnum = rnd.Next(1, 100);
-        Ans = x + y + z + randnum; 
-        Console.WriteLine(Ans);    
+        Ans = x + y + z + randnum;
+        Console.WriteLine(Ans); 
     }
+  }
+  
+  if (Ans == Value)
+  {
+    TaskFinish++;
+    Console.ForegroundColor = ConsoleColor.Red; 
+    Console.WriteLine("The number 100 appeared.");
+    Console.ReadKey(); 
+    break;
+    
+  }
+
 }
-Console.ReadKey(); 
-static (int, string) GetRandomSign()
+ 
+static (int, string) GenRandomSign()
 {
    string signS = "";
    Random rnd = new Random(); 
