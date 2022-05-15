@@ -1,3 +1,4 @@
 # SMEG
 Useless, pointless and you probably will never need to use it 
-![alt text](https://imgur.com/a/wuGpMN0)
+![](https://github.com/Hiccupcc/SMEG/blob/master/readmegif.gif)
+
