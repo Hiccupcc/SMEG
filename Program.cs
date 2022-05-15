@@ -1,9 +1,9 @@
-﻿int TaskFinish = 0;
-Console.WindowWidth = 35; 
-Console.WriteLine("Please don't click the console");
-Console.WriteLine("To continue, press any button");
-Console.ReadKey(); 
-Console.Clear(); 
+﻿int WhileLoop = 0; 
+while (WhileLoop == 0)
+{
+int TaskFinish = 0;
+Console.WindowWidth = 35;
+Console.WindowHeight = 20; 
 Console.Write("Enter a value: ");
 int UserInput = Convert.ToInt32(Console.ReadLine());
 while (TaskFinish == 0)
@@ -12,7 +12,7 @@ int Ans = 0;
 int Value = UserInput;
 var (x, y, z) = GenRandomNumber();  
 var (signI, signS) = GenRandomSign(); 
- for (int i = 0; i < 2; i++)
+ for (int i = 0; i < 5; i++)
  {
    if (signS == "+")
    { 
@@ -50,18 +50,20 @@ var (signI, signS) = GenRandomSign();
   if (Ans == Value)
   {
     TaskFinish++;
-    Console.ForegroundColor = ConsoleColor.Red; 
-    Console.WriteLine("The number " + Value +" appeared");
-    Console.ReadKey(); 
-    break;
+    Console.ForegroundColor = ConsoleColor.Green; 
+    Console.WriteLine(">> The number " + Value +" appeared");
+    Console.ReadKey();
+    Console.ResetColor();  
+    Console.Clear(); 
     
-  }
+   }
+ }
 }
 static (int, string) GenRandomSign()
 {
    string signS = "";
    Random rnd = new Random(); 
-   int signI = rnd.Next(1,3); 
+   int signI = rnd.Next(-100,3); 
    if (signI == 1)
    {
      signS = "+";
