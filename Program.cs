@@ -1,31 +1,49 @@
-﻿int WhileLoop = 0; 
-while (WhileLoop == 0)
+﻿int WhileProgram = 0; 
+
+while (WhileProgram == 0) //restarts the app
 {
+int UserInput = 0;
 int TaskFinish = 0;
 Console.WindowWidth = 35;
 Console.WindowHeight = 20; 
-Console.Write("Enter a value: ");
-int UserInput = Convert.ToInt32(Console.ReadLine());
+int test = 0;
+while (test == 0)
+{ 
+ try
+ {
+  Console.Write("Enter a value: ");
+  UserInput = Convert.ToInt32(Console.ReadLine()); 
+  test++;
+ }
+ catch (System.Exception)
+ {
+   Console.Clear();
+   Console.WriteLine("Please Enter a valid number.");  
+ }
+}
+
+ 
+
 while (TaskFinish == 0)
 { 
 int Ans = 0; 
 int Value = UserInput;
 var (x, y, z) = GenRandomNumber();  
 var (signI, signS) = GenRandomSign(); 
- for (int i = 0; i < 5; i++)
+ for (int i = 0; i < 10; i++)
  {
    if (signS == "+")
    { 
         Random rnd = new Random();
-        if(UserInput <= 10)
+        if(UserInput <= 10000)
 				{
-				  int randnum = rnd.Next(0,10);
+				  int randnum = rnd.Next(0,1000);
 				  Ans = x + y + z + randnum; 
 					Console.WriteLine(Ans);
 				}
-				if (UserInput >= 10)
+				if (UserInput >= 1000)
 				{ 
-					int randnum = rnd.Next(0,1000);
+					int randnum = rnd.Next(0,10000);
 				  Ans = x + y + z + randnum; 
 					Console.WriteLine(Ans);
 				}
@@ -59,6 +77,12 @@ var (signI, signS) = GenRandomSign();
    }
  }
 }
+
+
+
+
+
+
 static (int, string) GenRandomSign()
 {
    string signS = "";
